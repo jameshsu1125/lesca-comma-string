@@ -1,4 +1,4 @@
 module.exports = {
-  name: 'lesca-',
-  description: '',
+  name: 'lesca-misc',
+  description: 'high performance, hight security and useful function',
 };
