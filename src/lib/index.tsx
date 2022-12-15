@@ -2,9 +2,9 @@ interface StringKeyObject {
   [name: string]: any;
 }
 
-export const CommaStringToObject = (commaDB: String, keys: string[]) => {
+export const CommaStringToList = (commaString: String, keys: string[]) => {
   // return empty string
-  if (commaDB === '') {
+  if (commaString === '') {
     return [];
   }
 
@@ -15,8 +15,8 @@ export const CommaStringToObject = (commaDB: String, keys: string[]) => {
     return false;
   }
 
-  // check keys index number is match commaDB length.
-  const splitedDB = commaDB.split(',');
+  // check keys index number is match commaString length.
+  const splitedDB = commaString.split(',');
   const keysLength = keys.length;
   const remainder = splitedDB.length % keysLength;
   if (remainder !== 0) {
@@ -38,7 +38,7 @@ export const CommaStringToObject = (commaDB: String, keys: string[]) => {
   return output;
 };
 
-export const ObjectToCommaString = (parm: object[]) => {
+export const ListToCommaString = (parm: object[]) => {
   // check empty array
   if (parm.length === 0) {
     return '';
@@ -52,9 +52,20 @@ export const ObjectToCommaString = (parm: object[]) => {
   return [output, keys];
 };
 
+export const CommaStringToArray = (commastring: string) => {
+  if (commastring === '') return [];
+  return commastring.split(',');
+};
+
+export const ArrayToCommaString = (data: string[]) => {
+  return data.join(',');
+};
+
 const Misc = {
-  CommaStringToObject,
-  ObjectToCommaString,
+  CommaStringToList,
+  ListToCommaString,
+  CommaStringToArray,
+  ArrayToCommaString,
 };
 
 export default Misc;

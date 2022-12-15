@@ -1,7 +1,7 @@
 {
-  "name": "lesca-misc",
-  "version": "0.0.1",
-  "description": "high performance, hight security and useful function",
+  "name": "lesca-comma-string",
+  "version": "1.0.0",
+  "description": "It can convert data between comma string and array",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
@@ -58,9 +58,9 @@
     "webpack-dev-server": "^4.11.1"
   },
   "author": "jamehsu1125 <jameshsu1125@gmail.com>",
-  "homepage": "https://github.com/jameshsu1125/npm-base-package",
+  "homepage": "https://jameshsu1125.github.io/lesca-comma-string/",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jameshsu1125/lesca-misc.git"
+    "url": "git@github.com:jameshsu1125/lesca-comma-string.git"
   }
 }

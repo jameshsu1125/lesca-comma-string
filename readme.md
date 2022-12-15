@@ -9,41 +9,68 @@
 
 # Why use it?
 
-high performance, hight security and useful function.
+It can convert data between `comma-string` and `object-in-array` or `array`.
 
-#### [Live Demo](https://jameshsu1125.github.io/lesca-misc/)
+#### What is `comma-string`?
 
-# Installation
+_It's a data format that can save into single tab of database._
 
-```sh
-npm install lesca-misc --save
+```js
+// user data from API
+const dataFromAPI = 'James,Hsu,41,male,Audrey,Chen,35,female';
 ```
 
-## Usage
+##### [Live Demo](https://jameshsu1125.github.io/lesca-misc/)
 
-### 1. CommaStringToObject
+### Installation
+
+```sh
+npm install lesca-comma-string --save
+```
+
+### Usage
+
+#### 1. CommaStringToList
 
 ```javascript
-import { CommaStringToObject } from 'lesca-misc';
+import { CommaStringToList } from 'lesca-comma-string';
 
 const dataFromAPI = 'james,41,male,Audrey,36,female';
 const keys = ['name', 'age', 'gender'];
-const data = CommaStringToObject(dataFromAPI, dataFormat); // [{"name":"james","age":"41","gender":"male"},{"name":"Audrey","age":"35","gender":"female"}]
+const data = CommaStringToList(dataFromAPI, dataFormat); // [{"name":"james","age":"41","gender":"male"},{"name":"Audrey","age":"35","gender":"female"}]
 ```
 
-### 2. ObjectToCommaString
+#### 2. ListToCommaString
 
 ```javascript
-import { ObjectToCommaString } from 'lesca-misc';
+import { ListToCommaString } from 'lesca-comma-string';
 
 const data = [
   { name: 'james', age: '41', gender: 'male' },
   { name: 'Audrey', age: '35', gender: 'female' },
 ];
 
-const [commaString, keys] = ObjectToCommaString(data);
+const [commaString, keys] = ListToCommaString(data);
 // commaString: 'james,41,male,Audrey,36,female'
 // keys = ['name', 'age', 'gender']
+```
+
+#### 3. CommaStringToArray
+
+```javascript
+import { CommaStringToArray } from 'lesca-comma-string';
+
+const dataFromAPI = 'james,audrey,ken,jenny';
+const data = CommaStringToArray(dataFromAPI); // ['james', 'audrey', 'ken', 'jenny']
+```
+
+#### 4. ArrayToCommaString
+
+```javascript
+import { ArrayToCommaString } from 'lesca-comma-string';
+
+const data = ['james', 'audrey', 'ken', 'jenny'];
+const result = ArrayToCommaString(data); // james,audrey,ken,jenny
 ```
 
 ### Features
